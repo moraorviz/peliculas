@@ -1,9 +1,11 @@
 package com.miw.peliculas.webservices;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 import java.util.Set;
 import javax.jws.WebService;
 
@@ -12,7 +14,8 @@ import javax.jws.WebService;
 public class ComparadorWS implements IComparadorWS
 {
 	private static List<String> peliculas;
-	private static Map<String, Double> comparacion;
+	
+	public Map<String, Double> comparacion;
 	
 	public enum Comercios
 	{
@@ -34,10 +37,24 @@ public class ComparadorWS implements IComparadorWS
 	}
 	
 	@Override
-	public String[] comparar() {
+	public String[] comparar(String titulo) {
 		
 		
+		
+		if (peliculas.contains(titulo)) {
+			for (Comercios c: Comercios.values()) {
+				
+			}
+		}
 		return null;
 	}
+	
+	public String calcularPrecio() {
+		
+		Random r = new Random();
+        double randomValue = 5 + (15 - 5) * r.nextDouble();
+        return new DecimalFormat("#.##").format(randomValue);
+	}
+	
 
 }
