@@ -16,5 +16,13 @@ public class App
         Random r = new Random();
         double randomValue = 5 + (15 - 5) * r.nextDouble();
         System.out.println(new DecimalFormat("#.##").format(randomValue));
+        System.out.println(calcularPrecio());
     }
+    
+	public static double calcularPrecio() {
+		
+		Random r = new Random();
+        double precio = Math.floor(5 + (15 - 5) * r.nextDouble());
+        return precio;
+	}
 }

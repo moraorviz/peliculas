@@ -14,10 +14,9 @@ import javax.jws.WebService;
 public class ComparadorWS implements IComparadorWS
 {
 	private static List<String> peliculas;
-	
 	public Map<String, Double> comparacion;
 	
-	public enum Comercios
+	public enum Comercio
 	{
 		NETFLIX, AMAZON, CARREFOUR, ALCAMPO,
 		TUVIDEOCLUB, FNAC, MEDIAMARKT
@@ -34,27 +33,24 @@ public class ComparadorWS implements IComparadorWS
 		peliculas.add("El señor de los anillos I");
 		peliculas.add("El señor de los anillos II");
 		peliculas.add(("El señor de los anillos III"));
+		comparacion = new HashMap();
 	}
 	
-	@Override
 	public String[] comparar(String titulo) {
 		
-		
-		
 		if (peliculas.contains(titulo)) {
-			for (Comercios c: Comercios.values()) {
-				
+			for (Comercio c: Comercio.values()) {
+				comparacion.put(c.toString(), calcularPrecio());
 			}
 		}
-		return null;
+		return (String[])comparacion.keySet().toArray(new String[0]);
 	}
 	
-	public String calcularPrecio() {
+	public double calcularPrecio() {
 		
 		Random r = new Random();
-        double randomValue = 5 + (15 - 5) * r.nextDouble();
-        return new DecimalFormat("#.##").format(randomValue);
+        double precio = Math.floor(5 + (15 - 5) * r.nextDouble());
+        return precio;
 	}
-	
 
 }
