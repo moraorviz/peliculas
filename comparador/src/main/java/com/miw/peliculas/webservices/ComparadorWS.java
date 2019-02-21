@@ -1,15 +1,14 @@
 package com.miw.peliculas.webservices;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Random;
 import javax.jws.WebService;
 
+//TODO add support for soap exceptions
 @WebService(endpointInterface = "com.miw.peliculas.webservices.IComparadorWS")
 public class ComparadorWS implements IComparadorWS {
-	private static List<Pelicula> peliculas;
+
 	private List<Comparacion> comparaList;
 
 	public enum Comercio {
@@ -28,6 +27,7 @@ public class ComparadorWS implements IComparadorWS {
 
 	}
 
+	//TODO add non-zero decimal part to the calculated prize
 	public double calcularPrecio() {
 
 		Random r = new Random();
