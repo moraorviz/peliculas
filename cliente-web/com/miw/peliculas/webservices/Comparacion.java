@@ -75,9 +75,5 @@ public class Comparacion {
     public void setVendedor(String value) {
         this.vendedor = value;
     }
-    
-	public String toString() {
-		return vendedor + " " + precio;
-	}
 
 }
