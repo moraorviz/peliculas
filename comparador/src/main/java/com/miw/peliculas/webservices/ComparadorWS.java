@@ -15,7 +15,7 @@ public class ComparadorWS implements IComparadorWS {
 		NETFLIX, AMAZON, CARREFOUR, ALCAMPO, TUVIDEOCLUB, FNAC, MEDIAMARKT
 	}
 
-	public Comparacion[] comparar(String titulo) {
+	public Comparacion[] comparar() {
 
 		comparaList = new ArrayList<Comparacion>();
 

@@ -10,5 +10,5 @@ import javax.jws.soap.SOAPBinding.Style;
 public interface IComparadorWS 
 {
 	@WebMethod
-	public abstract Comparacion[] comparar(String titulo);
+	public abstract Comparacion[] comparar();
 }
