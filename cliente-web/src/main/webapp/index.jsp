@@ -4,13 +4,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title> Comparador de Peliculas </title>
+<title> SW </title>
 </head>
 <body>
-	<h1>Servicios Web - MIW2018-19</h1>
-	<h2>Entrega Adrian y Mario</h2>
+	<h1>Peliculas</h1>
 	<fieldset>
-	<legend>Comparador WS</legend>
+	<legend>Comparador WS - Cliente Web</legend>
 	  <form method="get">  
 	    <input type="submit" value="Comparar"/>
 	  </form>
