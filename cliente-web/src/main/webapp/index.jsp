@@ -4,25 +4,27 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title> SW </title>
+<link href="./styles/style.css" rel="stylesheet" type="text/css">
+<title> Peliculas </title>
 </head>
 <body>
-	<h1>Peliculas</h1>
-	<fieldset>
-	<legend>Comparador WS - Cliente Web</legend>
+
+	<header>
+	<h1>Películas</h1>
+	</header>
+	
 	  <form method="get">  
 	    <input type="submit" value="Comparar"/>
 	  </form>
-  </fieldset>
-
-  <fieldset>
-	<legend>Result</legend>
-	
-  		<%= ComparadorWSClient.comparar().toString()%>
-  	
-  	
   
-  	</fieldset>
-   
+	<h1>Result</h1>
+	
+  		<% String netflixVendedor = ComparadorWSClient.comparar().get(0).getVendedor(); %>
+  		<% double netflixPrecio = ComparadorWSClient.comparar().get(0).getPrecio(); %>		
+		
+  		<%= netflixVendedor %>
+  		<%= netflixPrecio %>   		
+  		
+  		
 </body>
 </html>
