@@ -10,4 +10,10 @@ header {
 h1 {
 	text-align: center;
 	color: blue;
+	letter-spacing: 3px;
+}
+
+#compararButton {
+	position: absolute;
+	right:300px;
 }

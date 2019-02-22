@@ -13,9 +13,11 @@
 	<h1>Películas</h1>
 	</header>
 	
+	<div id="compararButton">
 	  <form method="get">  
 	    <input type="submit" value="Comparar"/>
 	  </form>
+	 </div>
   
 	<h1>Result</h1>
 	
