@@ -16,11 +16,12 @@
 
 
 	<form method="get">
-		<input type="submit" value="Comparar" class="button compararButton" />
+		<input type="submit" value="Comparar" class="button compararButton" onclick="mostrar()" />
 	</form>
+	
+		<p>Resultado:</p>
+	<p class="flip" onclick="mostrar()">Click to show panel</p>
 
-
-	<h1>Result</h1>
 
 	<%
 		String netflixVendedor = ComparadorWSClient.comparar().get(0).getVendedor();
@@ -66,17 +67,39 @@
 	%>
 
 
-	<p>Comparacion de precios:</p>
+
+	<div id="panel">
 	<ul class="listaPrecios">
+		
+		<img style="float: left;" src="./images/netflix_icon.png" alt="icono netflix"
+			style="float: left">
+		
 		<li class="netflix"><%=netflixVendedor%> <%=netflixPrecio%>&euro;</li>
+		<img src="./images/amazon_icon.png" alt="icono carrefour"
+			style="float: left">
 		<li class="amazon"><%=amazonVendedor%> <%=amazonPrecio%>&euro;</li>
-		<img src="./images/carrefour_icon.png" alt="icono carrefour" style="float:left"> <li class="carrefour"> <%=carrefourVendedor%> <%=carrefourPrecio%>&euro;</li>
-		<li><%=alcampoVendedor%> <%=alcampoPrecio%>&euro;</li>
-		<li><%=tuvideoclubVendedor%> <%=tuvideoclubPrecio%>&euro;</li>
-		<li><%=fnacVendedor%> <%=fnacPrecio%>&euro;</li>
-		<li><%=mediamarktVendedor%> <%=mediamarktPrecio%>&euro;</li>
+		<img src="./images/carrefour_icon.png" alt="icono amazon"
+			style="float: left">
+		<li class="carrefour"><%=carrefourVendedor%> <%=carrefourPrecio%>&euro;</li>
+		<img src="./images/alcampo_icon.png" alt="icono alcampo"
+			style="float: left">
+		<li class="alcampo"><%=alcampoVendedor%> <%=alcampoPrecio%>&euro;</li>
+		<img src="./images/videoclub_icon.png" alt="icono videoclub"
+			style="float: left">
+		<li class="tuvideoclub"><%=tuvideoclubVendedor%> <%=tuvideoclubPrecio%>&euro;</li>
+		<img src="./images/fnac_icon.png" alt="icono fnac"
+			style="float: left">
+		<li class="fnac"><%=fnacVendedor%> <%=fnacPrecio%>&euro;</li>
+		<img src="./images/mediamarkt_icon.jpg" alt="icono mediamarkt"
+			style="float: left">
+		<li class="mediamarkt"><%=mediamarktVendedor%> <%=mediamarktPrecio%>&euro;</li>
 	</ul>
+	</div>
 
-
+<script>
+function mostrar() {
+  document.getElementById("panel").style.display = "inline";
+}
+</script>
 </body>
 </html>
