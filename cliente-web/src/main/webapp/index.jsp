@@ -1,4 +1,6 @@
 <%@page import="com.miw.peliculas.client.ComparadorWSClient"%>
+<%@page import="com.miw.peliculas.webservices.Comparacion"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -14,66 +16,39 @@
 	<h1>Peliculas</h1>
 	</header>
 
-
 	<form method="get">
-		<input type="submit" value="Comparar" class="button compararButton" onclick="mostrar()" />
+		<input type="submit" value="Comparar" class="button compararButton" />
 	</form>
-	
-		<p>Resultado:</p>
-	<p class="flip" onclick="mostrar()">Click to show panel</p>
-
 
 	<%
-		String netflixVendedor = ComparadorWSClient.comparar().get(0).getVendedor();
-	%>
-	<%
-		double netflixPrecio = ComparadorWSClient.comparar().get(0).getPrecio();
-	%>
-	<%
-		String amazonVendedor = ComparadorWSClient.comparar().get(1).getVendedor();
-	%>
-	<%
-		double amazonPrecio = ComparadorWSClient.comparar().get(1).getPrecio();
-	%>
-	<%
-		String carrefourVendedor = ComparadorWSClient.comparar().get(2).getVendedor();
-	%>
-	<%
-		double carrefourPrecio = ComparadorWSClient.comparar().get(2).getPrecio();
-	%>
-	<%
-		String alcampoVendedor = ComparadorWSClient.comparar().get(3).getVendedor();
-	%>
-	<%
-		double alcampoPrecio = ComparadorWSClient.comparar().get(3).getPrecio();
-	%>
-	<%
-		String tuvideoclubVendedor = ComparadorWSClient.comparar().get(4).getVendedor();
-	%>
-	<%
-		double tuvideoclubPrecio = ComparadorWSClient.comparar().get(4).getPrecio();
-	%>
-	<%
-		String fnacVendedor = ComparadorWSClient.comparar().get(5).getVendedor();
-	%>
-	<%
-		double fnacPrecio = ComparadorWSClient.comparar().get(5).getPrecio();
-	%>
-	<%
-		String mediamarktVendedor = ComparadorWSClient.comparar().get(6).getVendedor();
-	%>
-	<%
-		double mediamarktPrecio = ComparadorWSClient.comparar().get(6).getPrecio();
+		List<Comparacion> comparacionArray = ComparadorWSClient.comparar();
+		String netflixVendedor = comparacionArray.get(0).getVendedor();
+		double netflixPrecio = comparacionArray.get(0).getPrecio();
+		String amazonVendedor = comparacionArray.get(1).getVendedor();
+		double amazonPrecio = comparacionArray.get(1).getPrecio();
+		String carrefourVendedor = comparacionArray.get(2).getVendedor();
+		double carrefourPrecio = comparacionArray.get(2).getPrecio();
+		String alcampoVendedor = comparacionArray.get(3).getVendedor();
+		double alcampoPrecio = comparacionArray.get(3).getPrecio();
+		String tuvideoclubVendedor = comparacionArray.get(4).getVendedor();
+		double tuvideoclubPrecio = comparacionArray.get(4).getPrecio();
+		String fnacVendedor = comparacionArray.get(5).getVendedor();
+		double fnacPrecio = comparacionArray.get(5).getPrecio();
+		String mediamarktVendedor = comparacionArray.get(6).getVendedor();	
+		double mediamarktPrecio = comparacionArray.get(6).getPrecio();
 	%>
 
+	<select>
+		<option value="volvo">Volvo</option>
+		<option value="saab">Saab</option>
+		<option value="mercedes">Mercedes</option>
+		<option value="audi">Audi</option>
+	</select>
 
-
-	<div id="panel">
 	<ul class="listaPrecios">
-		
-		<img style="float: left;" src="./images/netflix_icon.png" alt="icono netflix"
-			style="float: left">
-		
+
+		<img style="float: left;" src="./images/netflix_icon.png"
+			alt="icono netflix" style="float: left">
 		<li class="netflix"><%=netflixVendedor%> <%=netflixPrecio%>&euro;</li>
 		<img src="./images/amazon_icon.png" alt="icono carrefour"
 			style="float: left">
@@ -87,19 +62,17 @@
 		<img src="./images/videoclub_icon.png" alt="icono videoclub"
 			style="float: left">
 		<li class="tuvideoclub"><%=tuvideoclubVendedor%> <%=tuvideoclubPrecio%>&euro;</li>
-		<img src="./images/fnac_icon.png" alt="icono fnac"
-			style="float: left">
+		<img src="./images/fnac_icon.png" alt="icono fnac" style="float: left">
 		<li class="fnac"><%=fnacVendedor%> <%=fnacPrecio%>&euro;</li>
 		<img src="./images/mediamarkt_icon.jpg" alt="icono mediamarkt"
 			style="float: left">
 		<li class="mediamarkt"><%=mediamarktVendedor%> <%=mediamarktPrecio%>&euro;</li>
 	</ul>
-	</div>
 
-<script>
-function mostrar() {
-  document.getElementById("panel").style.display = "inline";
-}
-</script>
+	<script>
+		function mostrar() {
+			document.getElementById("panel").style.display = "inline";
+		}
+	</script>
 </body>
 </html>
