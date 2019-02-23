@@ -1,5 +1,6 @@
 <%@page import="com.miw.peliculas.client.ComparadorWSClient"%>
 <%@page import="com.miw.peliculas.webservices.Comparacion"%>
+<%@page import="com.miw.peliculas.client.ListadorWSClient"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
@@ -16,9 +17,7 @@
 	<h1>Peliculas</h1>
 	</header>
 
-	<form method="get">
-		<input type="submit" value="Comparar" class="button compararButton" />
-	</form>
+	<% String[] listaPelis = ListadorWSClient.listar(); %>
 
 	<%
 		List<Comparacion> comparacionArray = ComparadorWSClient.comparar();
@@ -39,14 +38,26 @@
 	%>
 
 	<select>
-		<option value="volvo">Volvo</option>
-		<option value="saab">Saab</option>
-		<option value="mercedes">Mercedes</option>
-		<option value="audi">Audi</option>
+		<option value="1"> <%= listaPelis[0] %></option>
+		<option value="2"><%= listaPelis[1] %></option>
+		<option value="3"><%= listaPelis[2] %></option>
+		<option value="4"><%= listaPelis[3] %></option>
+		<option value="5"><%= listaPelis[4] %></option>
+		<option value="6"><%= listaPelis[5] %></option>
+		<option value="7"><%= listaPelis[6] %></option>
+		<option value="8"><%= listaPelis[7] %></option>
+		<option value="9"><%= listaPelis[8] %></option>
+		<option value="10"><%= listaPelis[9] %></option>
 	</select>
-
+	
+	<form method="get">
+		<input type="submit" value="Comparar" class="button compararButton" />
+	</form>
+	
+	 <button type="button" onclick="mostrar()">Click Me!</button> 
+	
+	
 	<ul class="listaPrecios">
-
 		<img style="float: left;" src="./images/netflix_icon.png"
 			alt="icono netflix" style="float: left">
 		<li class="netflix"><%=netflixVendedor%> <%=netflixPrecio%>&euro;</li>
@@ -71,7 +82,7 @@
 
 	<script>
 		function mostrar() {
-			document.getElementById("panel").style.display = "inline";
+			document.getElementByClassName("listaPrecios").style.display = "none";
 		}
 	</script>
 </body>
