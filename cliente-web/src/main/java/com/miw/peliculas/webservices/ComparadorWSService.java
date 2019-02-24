@@ -30,7 +30,7 @@ public class ComparadorWSService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://localhost:8080/comparador/soapws/comparador?wsdl");
+            url = new URL("http://156.35.95.59:8080/comparador/soapws/comparador?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }
