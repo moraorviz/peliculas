@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "ComparadorWSService", targetNamespace = "http://webservices.peliculas.miw.com/", wsdlLocation = "http://localhost:8080/comparador/soapws/comparador?wsdl")
+@WebServiceClient(name = "ComparadorWSService", targetNamespace = "http://webservices.peliculas.miw.com/", wsdlLocation = "http://156.35.95.59:8080/comparador/soapws/comparador?wsdl")
 public class ComparadorWSService
     extends Service
 {
@@ -30,7 +30,7 @@ public class ComparadorWSService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://localhost:8080/comparador/soapws/comparador?wsdl");
+            url = new URL("http://156.35.95.59:8080/comparador/soapws/comparador?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }
