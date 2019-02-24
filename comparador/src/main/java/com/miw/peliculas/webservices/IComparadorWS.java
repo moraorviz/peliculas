@@ -6,7 +6,7 @@ import javax.jws.soap.SOAPBinding;
 import javax.jws.soap.SOAPBinding.Style;
 
 @WebService
-@SOAPBinding(style=SOAPBinding.Style.DOCUMENT)
+@SOAPBinding(style=Style.DOCUMENT)
 public interface IComparadorWS 
 {
 	@WebMethod

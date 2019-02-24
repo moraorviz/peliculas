@@ -17,3 +17,5 @@ target/
 
 # project specific
 tools/
+
+comparador/lib/
