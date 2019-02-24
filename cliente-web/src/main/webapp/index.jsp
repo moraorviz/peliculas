@@ -12,14 +12,16 @@
 </head>
 <body>
 
-	<header>
-	<h1>Peliculas</h1>
-	</header>
+<div class="header">
+  <h1>Peliculas</h1>
+  <p>Informate y compara precios!</p>
+</div>
 
 	<%
 		String[] listaPelis = ListadorWSClient.listar();
 	%>
 
+	<div class="form-container">
 	<form method="get">
 		<select name="peliculas">
 			<option disabled selected="selected">Selecciona una peli</option>
@@ -36,10 +38,10 @@
 		</select> 
 		<input type="submit" value="Submit" />
 	</form>
+	</div>
 
 	<%
 		if (request.getParameter("peliculas") != null) {
-			String peliculaId = request.getParameter("peliculas");
 	%>
 
 	<jsp:include page="response.jsp" />

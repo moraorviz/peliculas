@@ -39,44 +39,108 @@
 </h2>
 
 
-<ul class="listaPrecios">
+<section class='flex-container'>
+	<div class='flex-item flex-item1'>
 	<img style="float: left;" src="./images/netflix_icon.png"
 		alt="icono netflix" style="float: left">
-	<li class="netflix"><%=netflixVendedor%> <%=netflixPrecio%>&euro;</li>
+	<%=netflixVendedor%> <%=netflixPrecio%>&euro;
+	</div>
+	<div class='flex-item flex-item2'>
 	<img src="./images/amazon_icon.png" alt="icono carrefour"
 		style="float: left">
-	<li class="amazon"><%=amazonVendedor%> <%=amazonPrecio%>&euro;</li>
+	<%=amazonVendedor%> <%=amazonPrecio%>&euro;
+	</div>
+	<div class='flex-item flex-item3'>
 	<img src="./images/carrefour_icon.png" alt="icono amazon"
 		style="float: left">
-	<li class="carrefour"><%=carrefourVendedor%> <%=carrefourPrecio%>&euro;</li>
+	<%=carrefourVendedor%> <%=carrefourPrecio%>&euro;
+	</div>
+	<div class='flex-item flex-item4'>
 	<img src="./images/alcampo_icon.png" alt="icono alcampo"
 		style="float: left">
-	<li class="alcampo"><%=alcampoVendedor%> <%=alcampoPrecio%>&euro;</li>
+	<%=alcampoVendedor%> <%=alcampoPrecio%>&euro;
+	</div>
+	<div class='flex-item flex-item5'>
 	<img src="./images/videoclub_icon.png" alt="icono videoclub"
 		style="float: left">
-	<li class="tuvideoclub"><%=tuvideoclubVendedor%> <%=tuvideoclubPrecio%>&euro;</li>
+	<%=tuvideoclubVendedor%> <%=tuvideoclubPrecio%>&euro;
+	</div>
+	<div class='flex-item flex-item6'>
 	<img src="./images/fnac_icon.png" alt="icono fnac" style="float: left">
-	<li class="fnac"><%=fnacVendedor%> <%=fnacPrecio%>&euro;</li>
+	<%=fnacVendedor%> <%=fnacPrecio%>&euro;
+	</div>
+	<div class='flex-item flex-item7'>
 	<img src="./images/mediamarkt_icon.jpg" alt="icono mediamarkt"
 		style="float: left">
-	<li class="mediamarkt"><%=mediamarktVendedor%> <%=mediamarktPrecio%>&euro;</li>
-</ul>
+	<%=mediamarktVendedor%> <%=mediamarktPrecio%>&euro;
+	</div>
+</section>
 
 
+<h1>
+	<font color="black">Detalles </font>
+</h1>
+<section class=pelicula-section>
+	<div class="wrapper columns">
+		<div class="column">
+			<figure>
+				<img src="./images/score_icon.png" alt="score">
+			</figure>
+			<h2>
+				Calificacion
+			</h2>
+			<p>
+				<%=infoPelicula.getCalificacion()%>
+			</p>
+		</div>
+		<div class="column">
+			<figure>
+				<img src="./images/duration_icon.png" alt="clock">
+			</figure>
+			<h2>
+				Duracion
+			</h2>
+			<p>
+				<%=infoPelicula.getDuracion()%>
+			</p>
+		</div>
+		<div class="column">
+			<figure>
+				<img src="./images/date_icon.jpg" alt="calendar">
+			</figure>
+			<h2>
+				Año
+			</h2>
+			<p>
+				<%=infoPelicula.getYear()%>
+			</p>
+		</div>
+		<div class="column">
+			<figure>
+				<img src="./images/country_icon.png" alt="planet earth">
+			</figure>
+			<h2>
+				Pais
+			</h2>
+			<p>
+				<%=infoPelicula.getPais()%>
+			</p>
+		</div>
+				<div class="column">
+			<figure>
+				<img src="./images/actor_icon.png" alt="actor">
+			</figure>
+			<h2>
+				Reparto
+			</h2>
+			<p>
+				<%=infoPelicula.getReparto()%>
+			</p>
+		</div>
+	</div>
+</section>
 
-
-<h2>Informacion</h2>
-Calificacion:
-<%=infoPelicula.getCalificacion()%>
-Duracion:
-<%=infoPelicula.getDuracion()%>
-Fecha de salida:
-<%=infoPelicula.getYear()%>
-Pais:
-<%=infoPelicula.getPais()%>
-<h2>Reparto</h2>
-<%=infoPelicula.getReparto()%>
-<h2>Sinopsis</h2>
+<h1>Sinopsis</h1>
 <p>
 	<%=infoPelicula.getSinopsis()%>
 </p>
